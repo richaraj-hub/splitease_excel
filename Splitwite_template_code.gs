@@ -8,7 +8,6 @@ const MEMBERS_SHEET_NAME = 'Members';
 const EXPENSE_SHEET_NAME = 'Expenses';
 const SUMMARY_SHEET_NAME = 'Summary';
 const FORM_SHEET_NAME = 'Form';
-let USERS = getUsers();
 
 /**
  * Get list of users from Members sheet
@@ -60,12 +59,12 @@ function initializeSpreadsheet() {
   }
 
   // Create or clear sheets
-  // createOrClearSheet(ss, MEMBERS_SHEET_NAME);
+  createOrClearSheet(ss, MEMBERS_SHEET_NAME);
   createOrClearSheet(ss, FORM_SHEET_NAME);
   createOrClearSheet(ss, EXPENSE_SHEET_NAME);
   createOrClearSheet(ss, SUMMARY_SHEET_NAME);
   
-  // setupMembersSheet();
+  setupMembersSheet();
   setupFormSheet();
   setupExpenseSheet();
   setupSummarySheet();
@@ -117,7 +116,7 @@ function createOrClearSheet(ss, sheetName) {
  * Refresh the From, summay and expense for additional users.
  */
 function refreshForms() {
-  USERS = getUsers();
+  const USERS = getUsers();
   // Update setupForm
   setupFormSheet();
   // Update Expsnes Form
@@ -131,7 +130,7 @@ function setupFormSheet() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = ss.getSheetByName(FORM_SHEET_NAME);
   sheet.clear();
-  
+  const USERS = getUsers();
   // Form title
   sheet.getRange('A1').setValue('💰 Expense Splitter Form').setFontSize(16).setFontWeight('bold');
   
@@ -235,6 +234,18 @@ function setupExpenseSheet() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = ss.getSheetByName(EXPENSE_SHEET_NAME);
   
+  // Check if expense sheet alrady has some entries. 
+  
+  // Get last row with data in column A
+  var lastRow = sheet.getRange("A:A").getLastRow();
+
+  if (lastRow > 2) {
+    Logger.log("✅ Data exists below A2, not clearing the sheet");
+  } else {
+    Logger.log("❌ No data below A2");
+    sheet.clear();
+  }
+
   // Get current users
   let USERS;
   try {
@@ -289,10 +300,10 @@ function setupSummarySheet() {
 function submitExpense() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const formSheet = ss.getSheetByName(FORM_SHEET_NAME);
+  // Get current users
+  const USERS = getUsers();
   
   try {
-    // Get current users
-    const USERS = getUsers();
     
     // Get form data
     const description = formSheet.getRange('B3').getValue().toString().trim();
@@ -464,7 +475,7 @@ function setupMembersSheet() {
 function clearForm() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = ss.getSheetByName(FORM_SHEET_NAME);
-  
+  const USERS = getUsers();
   sheet.getRange('B3').setValue('Enter description here...');
   sheet.getRange('B4').setValue(0);
   sheet.getRange('B5').setValue(Utilities.formatDate(new Date(), Session.getScriptTimeZone(), 'yyyy-MM-dd'));
@@ -491,6 +502,8 @@ function updateSummary() {
   const expenseSheet = ss.getSheetByName(EXPENSE_SHEET_NAME);
   const summarySheet = ss.getSheetByName(SUMMARY_SHEET_NAME);
   
+  const USERS = getUsers();
+
   // Get balances from expense sheet
   const balances = {};
   for (let i = 0; i < USERS.length; i++) {
