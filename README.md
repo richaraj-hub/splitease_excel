@@ -44,12 +44,14 @@ SplitEase is a Google Sheets-based tool designed to manage group expenses easily
 
 1. Go to the `Members` sheet and update the list of members.
 2. Click **Expense Splitter > Refresh Forms**.
-3. The list of members will be updated in both the entry form and the expense sheet.
+3. The list of members will be updated in both the entry form and the expense sheet. Validate once if those name are there.
+4. You are not ready to share the sheet with outhers. 
 
 ### 5. Start Tracking Expenses
 
-- Members can now use the form (even from mobile devices) to record expenses.
-- The sheet will automatically calculate who owes whom and provide a summary for settlements.
+- Share the sheet with other and and provide eidtor access. 
+- Members can now use the Sheet Form (even from mobile devices) to record expenses.
+- The sheet will automatically calculate who owes whom and provide a summary for settlements in Summay Sheet.
 
 ## Prerequisites
 
@@ -58,8 +60,8 @@ SplitEase is a Google Sheets-based tool designed to manage group expenses easily
 
 ## File Structure
 
-- `splitwise_excel.gs`: The Google Apps Script file for menu and automation.
-- Google Sheet Template: Provided in the repository or as a downloadable link.
+- `splitease_template_code.gs`: The Google Apps Script file for menu and automation.
+- `splitease_teamplate.xlsx`  : Initial spreadsheet template. 
 
 ## Contributing
 
