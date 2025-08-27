@@ -191,16 +191,19 @@ function setupFormSheet() {
   });
   
   // Submit button (Note: This is just visual - use menu to submit)
-  sheet.getRange(currentRow + 1, 1).setValue('🚀 SUBMIT EXPENSE (Use Menu Above)');
+  sheet.getRange(currentRow + 1, 1).setValue('🚀 SUBMIT EXPENSE (Use submit Above)');
   sheet.getRange(currentRow + 1, 1).setBackground('#4CAF50').setFontColor('white').setFontWeight('bold');
+  sheet.getRange(currentRow + 1, 1).setWrap(true);
 
   // Add a note about how to submit
-  sheet.getRange(currentRow + 2, 1).setValue('⚠️ To submit: Go to menu "💰 Expense Splitter" → "Submit Expense"');
+  sheet.getRange(currentRow + 2, 1).setValue('⚠️ To submit (Desktop users only): Go to menu "💰 Expense Splitter" → "Submit Expense"');
   sheet.getRange(currentRow + 2, 1).setFontColor('red').setFontStyle('italic');
+  sheet.getRange(currentRow + 2, 1).setWrap(true);
 
   // Make if mobile friendly.
-  sheet.getRange(2, 1).setValue('🚀 SUBMIT EXPENSE use Dropdown -->');
-  
+  sheet.getRange(2, 1).setValue('🚀 SUBMIT EXPENSE use Dropdown ⇨aaq');
+  sheet.getRange(2, 1).setWrap(true);
+
   const submitbuttonrange = sheet.getRange(2, 2);
   const submitbuttonRule = SpreadsheetApp.newDataValidation()
     .requireValueInList(['Submit', 'Reset'])
@@ -696,4 +699,3 @@ Need more help? Check the script comments or contact your sheet admin.
   
   SpreadsheetApp.getUi().alert('Help', helpText, SpreadsheetApp.getUi().ButtonSet.OK);
 }
-
