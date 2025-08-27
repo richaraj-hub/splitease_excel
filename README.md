@@ -16,6 +16,10 @@ SplitEase is a Google Sheets-based tool designed to manage group expenses easily
 ### 1. Download the Template
 
 - Copy the Google Sheet template - Splitease_template.xlsx provided in this repository.
+- Save it in your Google Drive.
+- Open it using Google Sheet
+- Select File --> Save as Google Sheet.
+- Rename the sheet
 
 ### 2. Set Up the Google Apps Script
 
