@@ -15,13 +15,13 @@ SplitEase is a Google Sheets-based tool designed to manage group expenses easily
 
 ### 1. Download the Template
 
-- Copy the Google Sheet template provided in this repository.
+- Copy the Google Sheet template - Splitease_template.xlsx provided in this repository.
 
 ### 2. Set Up the Google Apps Script
 
 1. Open the template.
 2. Go to `Extensions > Apps Script`.
-3. Copy the contents of `splitease_excel.gs` from this repository into the Apps Script editor.
+3. Copy the contents of `splitease_template_code.gs` from this repository into the Apps Script editor.
 4. Save the script.
 
 ### 3. Initialize the Sheet
@@ -33,7 +33,7 @@ SplitEase is a Google Sheets-based tool designed to manage group expenses easily
 
 ### 4. Add Members
 
-1. Go to the `member` sheet and update the list of members.
+1. Go to the `Members` sheet and update the list of members.
 2. Click **Expense Splitter > Refresh Forms**.
 3. The list of members will be updated in both the entry form and the expense sheet.
 
@@ -58,8 +58,7 @@ Feel free to suggest improvements or report issues by opening an issue or pull r
 
 ## License
 
-[Specify your license here, e.g., MIT License]
 
 ---
 
-**Created by [your name or GitHub handle]**
+**Created by @rajivgup_hub**
