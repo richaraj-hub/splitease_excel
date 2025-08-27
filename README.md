@@ -25,15 +25,20 @@ SplitEase is a Google Sheets-based tool designed to manage group expenses easily
 
 1. Open the sheet.
 2. Go to `Extensions > Apps Script`.
-3. Copy the contents of `splitease_template_code.gs` from this repository into the Apps Script editor.
+3. REPLACE anything there with the contents of `splitease_template_code.gs` from this repository into the Apps Script editor.
 4. Save the script.
+5. And close the App Script editor.
 
 ### 3. Initialize the Sheet
 
 1. Close and reopen the Google Sheet.
 2. You’ll now see a new menu item called **Expense Splitter**.
-3. Click **Expense Splitter > Initialize Sheets**.
-4. Multiple sheets will be created for managing expenses and members.
+3. Click **Expense Splitter > Initialize Sheets**. You will be asked to provide Authorisation required (A script attached to this document needs your permission to run.) - This google ask your permission to the script code. Please click "OK". YOu will be navigated to multiple Autorisation windows.
+4. Click Advanced at "Google hasn’t verified this app" clid "Go to Untitled project (unsafe)"
+5. Click Continue to "Google will allow Untitled project to access this info about you"
+6. Select All and then Continue at screen "This app hasn’t been verified by Google. Because this app is requesting ....."
+7. Multiple sheets will be created for managing expenses and members.
+8. A pop-up will confirm that Initialization is successful. Click Ok
 
 ### 4. Add Members
 
