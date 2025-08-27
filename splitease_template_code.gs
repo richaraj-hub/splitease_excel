@@ -1,5 +1,5 @@
 /**
- * Splitwise Expense Tracker - Google Apps Script
+ * Splitease Expense Tracker - Google Apps Script
  * This script creates a form-based expense splitting system in Google Sheets
  */
 
@@ -670,7 +670,7 @@ function onEdit(e) {
  */
 function showHelp() {
   const helpText = `
-Splitwise Expense Tracker Help:
+Splitease Expense Tracker Help:
 
 1. SETUP:
    - Run "Initialize Sheets" from the menu first
@@ -696,3 +696,4 @@ Need more help? Check the script comments or contact your sheet admin.
   
   SpreadsheetApp.getUi().alert('Help', helpText, SpreadsheetApp.getUi().ButtonSet.OK);
 }
+
