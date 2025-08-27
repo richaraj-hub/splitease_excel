@@ -61,4 +61,4 @@ Feel free to suggest improvements or report issues by opening an issue or pull r
 
 ---
 
-**Created by @rajivgup_hub**
+**Created by richaraj-hub**
