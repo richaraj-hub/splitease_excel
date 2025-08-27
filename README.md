@@ -1,4 +1,4 @@
-# Splitwise Excel
+# Splitease Excel
 
 SplitEase is a Google Sheets-based tool designed to manage group expenses easily and transparently. Whether you're planning a group vacation, trip, or any event where expenses are shared among members, this template helps everyone keep track and settle up.
 
