@@ -23,7 +23,7 @@ SplitEase is a Google Sheets-based tool designed to manage group expenses easily
 
 ### 2. Set Up the Google Apps Script
 
-1. Open the template.
+1. Open the sheet.
 2. Go to `Extensions > Apps Script`.
 3. Copy the contents of `splitease_template_code.gs` from this repository into the Apps Script editor.
 4. Save the script.
